@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pricing Card</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+    background-image: url("https://teach.outschool.com/wp-content/uploads/2022/02/Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Copy-of-Untitled-1200-x-660-px-8.png");
+    background-size: cover;
+            background-repeat: no-repeat;
+}
+
+.pricing-card {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    max-width: 320px;
+}
+
+.plan {
+    grid-column: 1 / span 4;
+    text-align: center;
+    background-color: #ebca60;
+    color: #fff;
+    padding: 20px;
+}
+
+.price {
+    grid-column: 1 / span 4;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.price h3 {
+    font-size: 36px;
+    margin: 0;
+}
+
+.price span {
+    font-size: 18px;
+}
+
+.features {
+    grid-column: 1 / span 4;
+    padding: 20px;
+}
+
+.features ul {
+    list-style: none;
+    padding: 0;
+}
+
+.features li {
+    margin: 10px 0;
+}
+
+.cta {
+    grid-column: 1 / span 4;
+    text-align: center;
+    padding: 20px;
+}
+
+button {
+    background-color: #079436;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7beb78;
+}
+/* Initially hide the additional details */
+.pricing-card .features {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+/* Show additional details when the .show-details class is added */
+.pricing-card.show-details .features {
+    max-height: 1000px; /* Adjust this value as needed */
+}
+
+
+
+
+    </style>
+</head>
+<body>
+
+    
+    <div class="pricing-card">
+        <div class="plan">
+            <h2>Basic Plan</h2>
+            <p>For individuals</p>
+        </div>
+        <div class="price">
+            <h3>$19<span>/month</span></h3>
+        </div>
+        <div class="features">
+            <ul>
+                <li>10GB Storage</li>
+                <li>Unlimited Users</li>
+                <li>24/7 Support</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <button>Select Plan</button>
+        </div>
+    </div>
+
+    <div class="pricing-card">
+        <div class="plan">
+            <h2>Pro Plan</h2>
+            <p>For small businesses and teams</p>
+        </div>
+        <div class="price">
+            <h3>$49<span>/month</span></h3>
+        </div>
+        <div class="features">
+            <ul>
+                <li>20GB Storage</li>
+                <li>Unlimited Users</li>
+                <li>24/7 Support</li>
+                <li>Advanced Analytics</li>
+                <li>Custom Branding</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <button>Select Plan</button>
+        </div>
+    </div>
+
+    <div class="pricing-card">
+        <div class="plan">
+            <h2>Premium Plan</h2>
+            <p>For larger businesses</p>
+        </div>
+        <div class="price">
+            <h3>$99<span>/month</span></h3>
+        </div>
+        <div class="features">
+            <ul>
+                <li>50GB Storage</li>
+                <li>Unlimited Users</li>
+                <li>24/7 Priority Support</li>
+                <li>Advanced Analytics</li>
+                <li>Custom Branding</li>
+                <li>API Access</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <button>Select Plan</button>
+        </div>
+    </div>
+
+    <div class="pricing-card">
+        <div class="plan">
+            <h2>Enterprise Plan</h2>
+            <p>For large corporations</p>
+        </div>
+        <div class="price">
+            <h3>$199<span>/month</span></h3>
+        </div>
+        <div class="features">
+            <ul>
+                <li>100GB Storage</li>
+                <li>Unlimited Users</li>
+                <li>24/7 Priority Support</li>
+                <li>Advanced Analytics</li>
+                <li>Custom Branding</li>
+                <li>API Access</li>
+                <li>Dedicated Account Manager</li>
+            </ul>
+        </div>
+        <div class="cta">
+            <button>Select Plan</button>
+        </div>
+    </div>
+
+    <script >
+        // Get the button elements
+const buttons = document.querySelectorAll(".cta button");
+
+// Add a click event listener to each button
+buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+        // Find the closest pricing card
+        const pricingCard = button.closest(".pricing-card");
+
+        // Toggle the class to show/hide additional information
+        pricingCard.classList.toggle("show-details");
+    });
+});
+
+    </script>
+</body>
+
+</html>
